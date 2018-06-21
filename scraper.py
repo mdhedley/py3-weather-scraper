@@ -3,14 +3,16 @@ from google.cloud import storage
 import base64
 import urllib2
 import datetime
-project_id= 'providence-demo'
-location= 'global'
-keyring='storage'
-key='mykey'
-encrypted_bucket='mdh-prov-enc-bucket'
-secret='dark-sky-key'
+import os
+project_id= os.environ['PROJECT_ID']
+location= os.environ['LOCATION']
+keyring=os.environ['KEYRING']
+key=os.environ['KEY']
+encrypted_bucket=os.environ['ENCRYPTED_BUCKET']
+secret=os.environ['SECRET']
+weather_bucket=os.environ['WEATHER_BUCKET']
+
 resource='projects/{}/locations/{}/keyRings/{}/cryptoKeys/{}'.format(project_id,location,keyring,key)
-weather_bucket='mdh-weather-bucket'
 
 
 class WeatherScraper:
