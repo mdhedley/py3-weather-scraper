@@ -49,7 +49,7 @@ class WeatherScraper:
         return plaintext
     
     def storeWeather(self):
-        url =  urllib2.urlopen('https://api.darksky.net/forecast/{}/33.4353,-112.3577'.format(self.decrypt_key()))
+        url =  urllib.request.urlopen('https://api.darksky.net/forecast/{}/33.4353,-112.3577'.format(self.decrypt_key()))
         weather = url.read()
         url.close()
         now = datetime.datetime.now()
