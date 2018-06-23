@@ -1,7 +1,7 @@
 import googleapiclient.discovery
 from google.cloud import storage
 import base64
-import urllib2
+import urllib
 import datetime
 import os
 project_id= os.environ['PROJECT_ID']
